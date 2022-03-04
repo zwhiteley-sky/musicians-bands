@@ -21,9 +21,4 @@ describe('Band and Musician Models', () => {
         // TODO - test creating a musician
         expect('NO TEST').toBe('EXPECTED VALUE HERE');
     })
-
-     test('Band can have many Musicians', async () => {
-        // TODO - test adding musicians to bands
-        expect('NO TEST').toBe('EXPECTED VALUE HERE');
-    })
 })

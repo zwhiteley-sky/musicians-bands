@@ -13,14 +13,17 @@ describe('Band and Musician Models', () => {
     })
 
     test('can create a Band', async () => {
+        // TODO - test creating a band
         expect('NO TEST').toBe('EXPECTED VALUE HERE');
     })
 
     test('can create a Musician', async () => {
+        // TODO - test creating a musician
         expect('NO TEST').toBe('EXPECTED VALUE HERE');
     })
 
      test('Band can have many Musicians', async () => {
+        // TODO - test adding musicians to bands
         expect('NO TEST').toBe('EXPECTED VALUE HERE');
     })
 })

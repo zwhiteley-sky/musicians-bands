@@ -7,7 +7,7 @@ We’ll have 2 database models:
 - Musicians
 - Bands
 
-## Part 1
+## Part 1: Database Creation
 
 ### Installing Dependencies and Running Tests
 1. Once the forked repository has been cloned, make sure to run `npm install`. This will install all dependencies. 
@@ -34,10 +34,42 @@ test('can create a Band', async () => {
 ### Models
 - Define the models! Here are the details:
   - The `Musician` model should have name and instrument properties, both of which are strings.
-  - The Band model should have name and genre properties, both of which are strings.
+  - The `Band` model should have name and genre properties, both of which are strings.
 
 ### Tests
 - At this point, we can start writing the tests!  Fill out each of the tests in the suite, following the instructions provided.
 
 ### Commit & Push
 - Always remember to `git add .`, `git commit -m “somemessage”`, and `git push` so we can see your work!
+
+## Part 2: One-to-Many Associations
+- In the `./index.js` file, before the `module.exports`, associate the two models. **Multiple musicians can be added to a Band.**
+- Add a test to account for the association
+- Run `npm test`. Write a test to add multiple musicians to a band. In the test:
+  - `Band.findAll()` to get the bands (if there aren’t any from the previous tests, you’ll have to `Band.create()` some!)
+  - For each of the bands, use something like `foundBand.getMusicians()` to check that they have been added correctly!
+- Always remember to `git add .`, `git commit -m “somemessage”`, and `git push` so we can see your work!
+
+## Part 3: Many-to-Many Associations
+
+### Songs Model
+- Add a new file `Song.js` and in it define a new model. It should have properties `title` (string) and `year` (number).
+
+### Associations
+- In the `./index.js` file, before the `module.exports`, associate the two models.
+  - Multiple songs can be added to a Band
+  - Multiple bands can have the same Song
+- Add another test to account for the association
+
+### Tests
+- Run `npm test`
+- Write a test to add multiple musicians to a band. In the test:
+  - `Band.create()` to make some bands. Use the data you’ve added in previous tests you’ve created!
+  - Create at least 2 songs
+  - For one band, add both songs
+  - For each of the songs, use something like `foundBand.getSongs()` to check that they have been added correctly!
+  - Do the same with the bands
+
+### Commit & Push
+- Always remember to `git add .`, `git commit -a “somemessage”`, and `git push` so we can see your work!
+

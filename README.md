@@ -7,6 +7,8 @@ We’ll have 2 database models:
 - Musicians
 - Bands
 
+We will be working on this across multiple days. **You should complete part 1 on day 1 and parts 2, 3, and 4 on day 2.**
+
 ## Part 1: Database Creation
 
 ### Installing Dependencies and Running Tests
@@ -40,7 +42,7 @@ test('can create a Band', async () => {
 - At this point, we can start writing the tests!  Fill out each of the tests in the suite, following the instructions provided.
 
 ### Commit & Push
-- Always remember to `git add .`, `git commit -m “somemessage”`, and `git push` so we can see your work!
+- `git add .`, `git commit -a “somemessage”`, and `git push` so we can see your work!
 
 ## Part 2: One-to-Many Associations
 - In the `./index.js` file, before the `module.exports`, associate the two models. **Multiple musicians can be added to a Band.**
@@ -48,7 +50,7 @@ test('can create a Band', async () => {
 - Run `npm test`. Write a test to add multiple musicians to a band. In the test:
   - `Band.findAll()` to get the bands (if there aren’t any from the previous tests, you’ll have to `Band.create()` some!)
   - For each of the bands, use something like `foundBand.getMusicians()` to check that they have been added correctly!
-- Always remember to `git add .`, `git commit -m “somemessage”`, and `git push` so we can see your work!
+- `git add .`, `git commit -a “somemessage”`, and `git push` so we can see your work!
 
 ## Part 3: Many-to-Many Associations
 
@@ -71,5 +73,13 @@ test('can create a Band', async () => {
   - Do the same with the bands
 
 ### Commit & Push
-- Always remember to `git add .`, `git commit -a “somemessage”`, and `git push` so we can see your work!
+- `git add .`, `git commit -a “somemessage”`, and `git push` so we can see your work!
 
+## Part 4: Eager Loading
+- Run `npm test`
+- Create test data and associate the models as in previous tests.
+- Find all the Bands
+- In the `Band.findAll()` call, include the `Musician` model.
+- Do the same again, but this time include the `Song` model.
+- Test the output
+- `git add .`, `git commit -a “somemessage”`, and `git push` so we can see your work!

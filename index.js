@@ -1,7 +1,12 @@
-const { Band } = require('./Band')
-const { Musician } = require('./Musician')
+const { Band } = require('./models/Band')
+const { Musician } = require('./models/Musician')
+const { Song } = require("./models/Song")
+// Define associations here
+
+
 
 module.exports = {
     Band,
-    Musician
+    Musician,
+    Song
 };

@@ -1,7 +1,7 @@
 const { sequelize } = require('./db');
-const { Band, Musician } = require('./index')
+const { Band, Musician, Song } = require('./index')
 
-describe('Band and Musician Models', () => {
+describe('Band, Musician, and Song Models', () => {
     /**
      * Runs the code prior to all tests
      */

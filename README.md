@@ -65,52 +65,55 @@ test('can create a Band', async () => {
 ## Day 2: Associations
 
 ### One-to-Many Associations
-- In the `./index.js` file, before the `module.exports`, associate the two models. **Multiple musicians can be added to a Band.**
-- Add a test to account for the association
-- Run `npm test`. Write a test to add multiple musicians to a band. In the test:
-  - `Band.findAll()` to get the bands (if there aren’t any from the previous tests, you’ll have to `Band.create()` some!)
+
+1. In the `index.js` file, before the `module.exports`, associate the `Band` and `Musician` models. **Multiple musicians can be added to a band and every musician can only have one band.**
+2. In `index.test.js`, create a test to account for this association. In the test:
+  - Use `Band.findAll()` to get the bands (if there aren’t any from the previous tests, you’ll have to `Band.create()` some!)
   - For each of the bands, use something like `foundBand.getMusicians()` to check that they have been added correctly!
-- `git add .`, `git commit -a “somemessage”`, and `git push` so we can see your work!
+3. Run `npm test` to verify the test runs properly.
 
 ### Many-to-Many Associations
-- In the `./index.js` file, before the `module.exports`, associate the `Song` and `Band` models.
-  - Multiple songs can be added to a Band
-  - Multiple bands can have the same Song
-- Add another test to account for the association
+1. In the `./index.js` file, before the `module.exports`, associate the `Song` and `Band` models.
+  - Multiple songs can be added to a Band.
+  - Multiple bands can have the same Song.
+2. In `index.test.js`, add another test to account for the `Song` and `Musician` association.
+3. Run `npm test` to verify the test runs properly.
 
 #### Association Tests
-- Run `npm test`
-- Write a test to add multiple musicians to a band. In the test:
+1. Run `npm test`
+2. Write a test to add multiple musicians to a band. In the test:
   - `Band.create()` to make some bands. Use the data you’ve added in previous tests you’ve created!
   - Create at least 2 songs
   - For one band, add both songs
   - For each of the songs, use something like `foundBand.getSongs()` to check that they have been added correctly!
-  - Do the same with the bands
-
-### Stretch: Eager Loading 🚀
-- Run `npm test`
-- Create test data and associate the models as in previous tests.
-- Find all the Bands
-- In the `Band.findAll()` call, include the `Musician` model.
-- Do the same again, but this time include the `Song` model.
-- Test the output
+  - Do the same with the bands.
 
 ### Stretch: `Manager` 🚀
-- Create a new model called `Manager` that will represent the person managing a `Band` has made. `Manager` can have properties of your choice, but a few you may want to add:
+1. Create a new model called `Manager` that will represent the person managing a `Band` has made. `Manager` can have properties of your choice, but a few you may want to add:
   - `name`: a string
   - `email`: a string
   - `salary`: a number
   - `dateHired`: a date
-- In the `./index.js` file, before the `module.exports`, associate the two models.
+2. In the `./index.js` file, before the `module.exports`, associate the two models.
   - A single `Band` can be added to a `Manager`
   - A single `Manager` can be added to a `Band`.
-- Write a test to add a manager to a band.
+3. Write a test to add a manager to a band and test the association.
 
-### Stretch: `Album`
-- Create a new model called `Album` that will represent an `Album` that can contain many `Song` instances. `Album` can have properties of your choice, but a few you may want to add:
+### Stretch: `Album` 🚀
+1. Create a new model called `Album` that will represent an `Album` that can contain many `Song` instances. `Album` can have properties of your choice, but a few you may want to add:
   - `title`: a string
   - `releaseDate`: a date
   - `duration`: a string
-- In the `./index.js` file, before the `module.exports`, associate the `Song` and `Album` models.
+2. In the `./index.js` file, before the `module.exports`, associate the `Song` and `Album` models.
   - Multiple `Song` instances can be added to a `Band`
   - Multiple `Band` instances can have the same `Song`
+3. Write a test to add multiple songs to a band and test the association.
+4. Write a test to add multiple bands to a song and test the association.
+
+### Stretch: Eager Loading 🚀
+1. Run `npm test`
+2. Create test data and associate the models as in previous tests.
+3. Find all the Bands
+4. In the `Band.findAll()` call, include the `Musician` model.
+5. Do the same again, but this time include the `Song` model.
+6. Test the output

@@ -100,17 +100,6 @@ test('can create a Band', async () => {
     - A single `Manager` can be added to a `Band`.
 3. Write a test to add a manager to a band and test the association.
 
-### `Album`
-1. Create a new model called `Album` that will represent an `Album` that can contain many `Song` instances. `Album` can have properties of your choice, but a few you may want to add:
-    - `title`: a string
-    - `releaseDate`: a date
-    - `duration`: a string
-2. In the `./index.js` file, before the `module.exports`, associate the `Song` and `Album` models.
-    - Multiple `Song` instances can be added to a `Band`
-    - Multiple `Band` instances can have the same `Song`
-3. Write a test to add multiple songs to a band and test the association.
-4. Write a test to add multiple bands to a song and test the association.
-
 ### Eager Loading
 1. Run `npm test`
 2. Create test data and associate the models as in previous tests.

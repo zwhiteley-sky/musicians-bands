@@ -66,7 +66,9 @@ test('can create a Band', async () => {
 
 ### One-to-Many Associations
 
-1. In the `index.js` file, before the `module.exports`, associate the `Band` and `Musician` models. **Multiple musicians can be added to a band and every musician can only have one band.**
+1. In the `index.js` file, before the `module.exports`, associate the `Band` and `Musician` models. 
+    - **Multiple musicians can be added to a band.**
+    - **Every musician has only one band.**
 2. In `index.test.js`, create a test to account for this association. In the test:
     - Use `Band.findAll()` to get the bands (if there aren’t any from the previous tests, you’ll have to `Band.create()` some!)
     - For each of the bands, use something like `foundBand.getMusicians()` to check that they have been added correctly!
@@ -77,18 +79,17 @@ test('can create a Band', async () => {
     - Multiple songs can be added to a Band.
     - Multiple bands can have the same Song.
 2. In `index.test.js`, add another test to account for the `Song` and `Musician` association.
-3. Run `npm test` to verify the test runs properly.
-
-#### Association Tests
-1. Run `npm test`
-2. Write a test to add multiple musicians to a band. In the test:
+3. Run `npm test`
+4. Write a test to add multiple musicians to a band. In the test:
     - `Band.create()` to make some bands. Use the data you’ve added in previous tests you’ve created!
     - Create at least 2 songs
     - For one band, add both songs
     - For each of the songs, use something like `foundBand.getSongs()` to check that they have been added correctly!
     - Do the same with the bands.
 
-### Stretch: `Manager` 🚀
+## Extensions 🚀
+
+### `Manager` 
 1. Create a new model called `Manager` that will represent the person managing a `Band` has made. `Manager` can have properties of your choice, but a few you may want to add:
     - `name`: a string
     - `email`: a string
@@ -99,7 +100,7 @@ test('can create a Band', async () => {
     - A single `Manager` can be added to a `Band`.
 3. Write a test to add a manager to a band and test the association.
 
-### Stretch: `Album` 🚀
+### `Album`
 1. Create a new model called `Album` that will represent an `Album` that can contain many `Song` instances. `Album` can have properties of your choice, but a few you may want to add:
     - `title`: a string
     - `releaseDate`: a date
@@ -110,7 +111,7 @@ test('can create a Band', async () => {
 3. Write a test to add multiple songs to a band and test the association.
 4. Write a test to add multiple bands to a song and test the association.
 
-### Stretch: Eager Loading 🚀
+### Eager Loading
 1. Run `npm test`
 2. Create test data and associate the models as in previous tests.
 3. Find all the Bands

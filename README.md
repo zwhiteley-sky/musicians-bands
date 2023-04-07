@@ -46,12 +46,13 @@ npm install
     - Can delete a `Musician` instance
     - Can delete a `Song` instance
 
-```javascript
-test('can create a Band', async () => {
-    const testUser = await User.create({ name: 'George', password: '123' });
-    expect(testUser.name).toBe('George');
-}
-```
+> When testing your code you will need to first create and band, musician, or song and then verify that it has been added. For example, a test with a User database, may look something like:
+> ```javascript
+> test('can create a Band', async () => {
+>    const testUser = await User.create({ name: 'George', password: '123' });
+>    expect(testUser.name).toBe('George');
+>}
+>```
 
 ### Extensions 🚀
 

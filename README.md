@@ -3,9 +3,10 @@
 # Musicians and Bands Database
 Rock on, dude! We're going to build Band/Musician organizer.
 
-We’ll have 2 database models:
-- Musicians
-- Bands
+**GOAL**: We’ll be creating a database that contains 3 models:
+- `Musician`
+- `Band`
+- `Song`
 
 We will be working on this across multiple days. **The work on this repository will be split across two days**
 

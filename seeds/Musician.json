@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Generic Person",
+        "instrument": "Generic Instrument"
+    },
+    {
+        "name": "Harry Styles",
+        "instrument": "Vocals"
+    },
+    {
+        "name": "Niall Horan",
+        "instrument": "Vocals"
+    },
+    {
+        "name": "Liam Payne",
+        "instrument": "Vocals"
+    },
+    {
+        "name": "Louis Tomlinson",
+        "instrument": "Vocals"
+    },
+    {
+        "name": "JC Chasez",
+        "instrument": "Vocals"
+    },
+    {
+        "name": "Joey Fatone",
+        "instrument": "Vocals"
+    },
+    {
+        "name": "Chris Kirkpatrick",
+        "instrument": "Vocals"
+    },
+    {
+        "name": "Justin Timberlake",
+        "instrument": "Vocals"
+    },
+    {
+        "name": "Lance Bass",
+        "instrument": "Vocals"
+    }
+]

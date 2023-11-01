@@ -29,4 +29,11 @@ describe('Band Tests', () => {
         const doesExist = await Band.findByPk(testBand.id)
         expect(doesExist).toBeFalsy();
      })
+     test('can increment showCount', async () => {
+        const testBand = await Band.create({ name: 'Yes', genre: 'Yes', showCount: 15 });
+        await testBand.increment({
+            'showCount': 5
+        })
+        expect((await Band.findByPk(testBand.id)).showCount).toBe(20)
+     })
 })

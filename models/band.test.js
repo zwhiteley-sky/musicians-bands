@@ -1,7 +1,7 @@
 const {Sequelize, sequelize} = require('../db');
 const {DataTypes} = require('sequelize')
 
-const { Band } = require('./Band')
+const { Band, Musician } = require('..')
 
 describe('Band Tests', () => {
     beforeAll(async () => {
@@ -9,10 +9,25 @@ describe('Band Tests', () => {
     })
 
     test('can create a Band', async () => {
-        const testBand = await Band.create({ name: 'Yes', genre: 'Yes', showCount: 15 });
+        let testBand = await Band.create({ name: 'Yes', genre: 'Yes', showCount: 15 });
+        
+        await testBand.createMusician({
+            name: "Zachary",
+            instrument: "Triangle"
+        });
+
         expect(testBand.name).toBe('Yes');
         expect(testBand.genre).toBe('Yes');
         expect(testBand.showCount).toBe(15);
+
+        // SELECT ... JOIN
+        testBand = await Band.findByPk(testBand.id, {
+            include: Musician
+        });
+
+        console.log(testBand);
+
+        expect(testBand.musicians[0].name).toBe("Zachary");
      })
 
      test('can update a Band instance', async () => {

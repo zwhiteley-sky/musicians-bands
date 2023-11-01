@@ -1,15 +1,24 @@
 const { sequelize } = require("../db");
-const { Song } = require("./Song");
+const { Song, Musician } = require("..");
 
 beforeEach(async () => {
     await sequelize.sync({ force: true });
 });
 
 test("can create Song", async () => {
-    const song = await Song.create({
+    let song = await Song.create({
         title: "Cruel Summer",
         year: 2023,
         length: 2.0
+    });
+
+    await song.createMusician({
+        name: "Zachary",
+        instrument: "Square"
+    });
+
+    song = await Song.findByPk(song.id, {
+        include: Musician
     });
 
     expect(song.title).toBe("Cruel Summer");
